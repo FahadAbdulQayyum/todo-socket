@@ -1,5 +1,8 @@
 export const isAuthenticated = ({ req }: { req?: any }) => {
-    const token = req?.cookies?.get('authToken')?.value; // Access the cookie directly
+    // const token = req?.cookies?.get('authToken')?.value; // Access the cookie directly
+    // const token = req?.cookies?.get('Authorization')?.value; // Access the cookie directly
+    const token = req?.cookies?.get('token')?.value; // Access the cookie directly
+    // const token = req.headers.get('Authorization')?.split(' ')[1];
     console.log(`Checking authentication. Token found: ${!!token}`); // Log the token status
     return !!token;
   };

@@ -74,6 +74,11 @@ const Navbar: React.FC = () => {
                 <div className="cart">
                     <IoIosContact className="text-2xl" aria-label="Shopping Cart" />
                 </div>
+                
+                {/* Cart Icon */}
+                <div className="cart">
+                    <IoBagOutline className="text-2xl" aria-label="Shopping Cart" />
+                </div>
             </div>
         </div>
     );

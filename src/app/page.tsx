@@ -1,13 +1,12 @@
 "use client"
 
 import React from 'react'
-import Admin from '@/components/Admin'
 
 const page = () => {
   
   return (
     <div>
-      <Admin />
+      <h1>Hello</h1>
     </div >
   )
 }
