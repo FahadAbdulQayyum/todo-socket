@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=dev NEXT_PUBLIC_ENV=dev next dev",
     "socket": "npx ts-node socket/index.ts",
-    "concurrent": "concurrently \"npm run dev\" \"npm run socket\"",
+    "start": "concurrently \"npm run dev\" \"npm run socket\"",
     "devv": "cross-env NODE_ENV=dev NEXT_PUBLIC_ENV=dev next dev",
     "TRN": "cross-env NODE_ENV=TRN NEXT_PUBLIC_ENV=TRN next dev",
     "DEV": "cross-env NODE_ENV=DEV NEXT_PUBLIC_ENV=DEV next dev",
@@ -14,7 +14,7 @@
     "PROD": "cross-env NODE_ENV=PROD NEXT_PUBLIC_ENV=PROD next dev",
     "DR": "cross-env NODE_ENV=DR NEXT_PUBLIC_ENV=DR next dev",
     "build": "cross-env NODE_ENV=dev NEXT_PUBLIC_ENV=dev next build",
-    "start": "next start",
+    "startt": "next start",
     "lint": "next lint",
     "cypress:open": "cypress open",
     "cypress:run": "cypress run",
