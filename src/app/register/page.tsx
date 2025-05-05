@@ -2,19 +2,24 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { setLoading } from '@/components/lib/features/loader/loaderSlice';
+import { useAppDispatch } from '@/components/lib/useAppDispatch';
 
 export default function RegisterPage() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [role, setRole] = useState<'user' | 'admin'>('user');
   const [error, setError] = useState('');
+  
   const router = useRouter();
+  const dispatch = useAppDispatch()
 
   const handleRegister = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+        dispatch(setLoading(true))
         console.log('...email...password...role...', email, password, role)
-      const response = await fetch('/api/auth/register', {
+        const response = await fetch('/api/auth/register', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password, role }),
@@ -26,8 +31,10 @@ export default function RegisterPage() {
         const errorData = await response.json();
         setError(errorData.error || 'Registration failed');
       }
+      dispatch(setLoading(false))
     } catch (err) {
       setError('An error occurred. Please try again.');
+      dispatch(setLoading(false))
     }
   };
 
