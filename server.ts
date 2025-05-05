@@ -27,7 +27,7 @@ async function start() {
         const changeStream = collection.watch();
 
         changeStream.on('change', (change) => {
-            console.log('Change detected:', change);
+            console.log('Change detected0:', change);
 
             // Broadcast the change to all connected WebSocket clients
             wss.clients.forEach((client: WebSocket) => {

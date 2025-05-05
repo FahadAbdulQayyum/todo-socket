@@ -28,7 +28,7 @@ mongoose.connect(MONGODB_URI, {}).then(() => {
   const changeStream = Task.watch();
 
   changeStream.on('change', (change) => {
-    console.log('Change detected:', change);
+    console.log('Change detected1:', change);
 
     if (change.operationType === 'insert') {
       const newTask = change.fullDocument;
