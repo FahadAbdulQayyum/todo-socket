@@ -16,7 +16,7 @@ const myfont = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "User Management Q-Commerce",
+  title: "Todo Web App with Socket",
   description: "Developed by Fahad Abdul Qayyum",
 };
 
@@ -31,7 +31,6 @@ export default function RootLayout({
         <Providers>
           <span className="relative">
             <span className="fixed top-0 left-0 right-0 z-50">
-              <UpperBanner />
               <Navbar />
             </span>
             <div className="mt-24">

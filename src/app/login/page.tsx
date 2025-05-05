@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { setLoading } from '@/components/lib/features/loader/loaderSlice';
+import { useAppDispatch } from '@/components/lib/useAppDispatch';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -9,9 +11,12 @@ export default function LoginPage() {
   const [error, setError] = useState('');
   const router = useRouter();
 
+  const dispatch = useAppDispatch();
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
+      dispatch(setLoading(true))
       const response = await fetch('/api/auth/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -27,7 +32,9 @@ export default function LoginPage() {
         const errorData = await response.json();
         setError(errorData.error || 'Invalid credentials');
       }
+      dispatch(setLoading(false))
     } catch (err) {
+      dispatch(setLoading(false))
       setError('An error occurred. Please try again.');
     }
   };

@@ -3,11 +3,14 @@
 import { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import { useToast } from "@/hooks/use-toast"
+import { useAppDispatch } from '@/components/lib/useAppDispatch';
+import { setLoading } from '@/components/lib/features/loader/loaderSlice';
 
 export default function AdminDashboard() {
   const [tasks, setTasks] = useState<any[]>([]);
 
   const { toast } = useToast()
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     // Initialize the WebSocket connection
@@ -18,6 +21,7 @@ export default function AdminDashboard() {
     // Fetch initial tasks from the API
     const fetchTasks = async () => {
       try {
+        dispatch(setLoading(true))
         const token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
         const response = await fetch('/api/admin/tasks', {
           method: 'GET',
@@ -30,7 +34,9 @@ export default function AdminDashboard() {
 
         const data = await response.json();
         setTasks(data);
+        dispatch(setLoading(false))
       } catch (error) {
+        dispatch(setLoading(false))
         console.error('Error fetching tasks:', error);
       }
     };

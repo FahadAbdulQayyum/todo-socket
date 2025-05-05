@@ -1,12 +1,16 @@
 'use client';
 
+import { setLoading } from '@/components/lib/features/loader/loaderSlice';
+import { useAppDispatch } from '@/components/lib/useAppDispatch';
 import { useEffect, useState } from 'react';
 
 export default function TasksPage() {
   const [tasks, setTasks] = useState<any[]>([]);
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const fetchTasks = async () => {
+      dispatch(setLoading(true))
       const token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
       console.log('!...token...!', token)
       // const response = await fetch('/api/tasks', {
@@ -17,6 +21,7 @@ export default function TasksPage() {
       const data = await response.json();
       console.log('...data...', data)
       setTasks(data);
+      dispatch(setLoading(false))
     };
 
     fetchTasks();
