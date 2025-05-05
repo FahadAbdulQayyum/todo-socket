@@ -11,12 +11,12 @@ import React from 'react'
 // import Essential from '@/components/Essential'
 // import CategoryList from '@/components/CategoryList'
 import Admin from '@/components/Admin'
-import useWebSocket from '@/components/WebSocket'
+import UseWebSocket from '@/components/WebSocket'
 
 
 const page = () => {
 
-  const data = useWebSocket('ws://localhost:8080')
+  const data = UseWebSocket('ws://localhost:8080')
   
   return (
     <div>
