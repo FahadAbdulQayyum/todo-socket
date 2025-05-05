@@ -20,8 +20,9 @@ export default function LoginPage() {
 
       if (response.ok) {
         const data = await response.json();
+        console.log('...dat....', data)
         document.cookie = `token=${data.token}; path=/;`;
-        router.push('/tasks');
+        data.role ==='admin' ? router.push('/admin/dashboard') : router.push('/tasks');
       } else {
         const errorData = await response.json();
         setError(errorData.error || 'Invalid credentials');
