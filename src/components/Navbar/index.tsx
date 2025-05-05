@@ -10,10 +10,40 @@ import { IoIosContact } from "react-icons/io";
 import { HiOutlineMenuAlt3, HiX } from 'react-icons/hi';
 
 import { useAppDispatch } from '@/components/lib/hooks'
+import { LogOut } from 'lucide-react';
+import { setLoading } from '../lib/features/loader/loaderSlice';
+import { useRouter } from 'next/navigation';
 
 
 const Navbar: React.FC = () => {
     const [menuOpen, setMenuOpen] = useState(false);
+    const dispatch = useAppDispatch()
+    const router = useRouter();
+
+        const logoutHandle = async () => {
+            try {
+              dispatch(setLoading(true))
+              // Call the logout API route
+              const response = await fetch("/api/auth/logout", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+              });
+        
+              if (response.ok) {
+                // Clear local storage and reset user info
+                localStorage.clear();
+        
+                // Redirect to the sign-in page
+                router.push("/login");
+                dispatch(setLoading(false))
+              } else {
+                alert("Failed to log out. Please try again.");
+              }
+            } catch (err) {
+              console.error("Error during logout:", err);
+              alert("An error occurred. Please try again.");
+            }
+          };
 
     return (
         <div className="flex justify-between items-center px-2 text-black bg-white border-b-2 py-2 md:px-standardSize sm:px-4">
@@ -74,10 +104,12 @@ const Navbar: React.FC = () => {
                 <div className="cart">
                     <IoIosContact className="text-2xl" aria-label="Shopping Cart" />
                 </div>
-                
+
                 {/* Cart Icon */}
-                <div className="cart">
-                    <IoBagOutline className="text-2xl" aria-label="Shopping Cart" />
+                <div className="cart"
+                onClick={logoutHandle}
+                >
+                    <LogOut className="text-2xl" aria-label="Shopping Cart" />
                 </div>
             </div>
         </div>
