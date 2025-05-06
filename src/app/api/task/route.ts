@@ -43,7 +43,7 @@ export async function POST(req: Request) {
 // PUT: Update an existing task by taskId
 export async function PUT(req: Request) {
   try {
-    const { taskId, title, description } = await req.json();
+    const { taskId, title, description, complete } = await req.json();
     console.log('PUT /api/tasks - taskId:', taskId, 'title:', title, 'description:', description);
 
     if (!taskId) {
@@ -54,7 +54,7 @@ export async function PUT(req: Request) {
 
     const updatedTask = await Task.findOneAndUpdate(
       { taskId },
-      { title, description },
+      { title, description, completed: !!complete },
       { new: true }
     );
 

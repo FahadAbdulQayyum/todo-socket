@@ -5,7 +5,7 @@ import { useAppDispatch } from '@/components/lib/useAppDispatch';
 import { MinusCircle, PlusCircle } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import { Switch } from '@/components/ui/switch'; // Import the Switch component
+// import { Switch } from '@/components/ui/switch'; // Import the Switch component
 
 interface TaskProps {
   complete: boolean;
@@ -74,44 +74,44 @@ export default function TasksPage() {
     router.push(
       `/tasks/update?taskId=${encodeURIComponent(task.taskId || '')}&title=${encodeURIComponent(
         task.title || ''
-      )}&description=${encodeURIComponent(task.description || '')}`
+      )}&description=${encodeURIComponent(task.description || '')}&completed=${encodeURIComponent(task.complete || '')}`
     );
   };
 
-  // Function to handle toggling the task's completion status
-  const toggleComplete = async (task: TaskProps) => {
-    const token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
-    try {
-      const response = await fetch('/api/task', {
-        method: 'PUT', // Assuming the API uses PUT to update tasks
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        body: JSON.stringify({
-          taskId: task.taskId,
-          complete: !task.complete, // Toggle the complete status
-        }),
-      });
+  // // Function to handle toggling the task's completion status
+  // const toggleComplete = async (task: TaskProps) => {
+  //   const token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
+  //   try {
+  //     const response = await fetch('/api/task', {
+  //       method: 'PUT', // Assuming the API uses PUT to update tasks
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //       body: JSON.stringify({
+  //         taskId: task.taskId,
+  //         complete: !task.complete, // Toggle the complete status
+  //       }),
+  //     });
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({}));
-        throw new Error(errorData.error || `HTTP error! Status: ${response.status}`);
-      }
+  //     if (!response.ok) {
+  //       const errorData = await response.json().catch(() => ({}));
+  //       throw new Error(errorData.error || `HTTP error! Status: ${response.status}`);
+  //     }
 
-      const updatedTask = await response.json();
-      console.log('...updatedTask...', updatedTask);
+  //     const updatedTask = await response.json();
+  //     console.log('...updatedTask...', updatedTask);
 
-      // Update the task in the state
-      setTasks((prevTasks) =>
-        prevTasks.map((t) =>
-          t.taskId === task.taskId ? { ...t, complete: !t.complete } : t
-        )
-      );
-    } catch (error) {
-      console.error('Error toggling task completion:', error && error);
-    }
-  };
+  //     // Update the task in the state
+  //     setTasks((prevTasks) =>
+  //       prevTasks.map((t) =>
+  //         t.taskId === task.taskId ? { ...t, complete: !t.complete } : t
+  //       )
+  //     );
+  //   } catch (error) {
+  //     console.error('Error toggling task completion:', error && error);
+  //   }
+  // };
 
   return (
     <div className="p-8">
@@ -122,15 +122,9 @@ export default function TasksPage() {
             <span>
               <h3 className="font-semibold">{task.title}</h3>
               <p>{task.description}</p>
-              <p className="text-sm text-gray-500">{task.complete ? 'Completed ✅' : 'Incomplete ❌'}</p>
+              <p className="text-sm text-gray-500">{task.completed ? 'Completed ✅' : 'Incomplete ❌'}</p>
             </span>
             <span className="flex flex-col space-y-2">
-              {/* Add the Switch for toggling completion status */}
-              <Switch
-                checked={task.complete}
-                onCheckedChange={() => toggleComplete(task)}
-                aria-label={`Toggle completion status for task: ${task.title}`}
-              />
               <button
                 className="border bg-black p-2 text-white rounded-lg"
                 onClick={() => deleteHandler(task)}
