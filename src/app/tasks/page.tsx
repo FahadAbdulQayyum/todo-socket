@@ -8,7 +8,7 @@ import { useEffect, useState } from 'react';
 // import { Switch } from '@/components/ui/switch'; // Import the Switch component
 
 interface TaskProps {
-  complete: boolean;
+  completed: boolean;
   createdAt?: string;
   description?: string;
   taskId?: string;
@@ -74,7 +74,7 @@ export default function TasksPage() {
     router.push(
       `/tasks/update?taskId=${encodeURIComponent(task.taskId || '')}&title=${encodeURIComponent(
         task.title || ''
-      )}&description=${encodeURIComponent(task.description || '')}&completed=${encodeURIComponent(task.complete || '')}`
+      )}&description=${encodeURIComponent(task.description || '')}&completed=${encodeURIComponent(task.completed || '')}`
     );
   };
 

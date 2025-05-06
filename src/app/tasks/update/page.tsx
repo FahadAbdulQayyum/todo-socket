@@ -13,7 +13,7 @@ export default function UpdateTaskPage() {
   const [title, setTitle] = useState<string>(searchParams.get('title') || '');
   const [description, setDescription] = useState<string>(searchParams.get('description') || '');
   const [complete, setComplete] = useState<boolean>(
-    searchParams.get('complete') === 'true' // Convert query param to boolean
+    searchParams.get('completed') === 'true' // Convert query param to boolean
   );
 
   // Update state if query parameters change
@@ -21,7 +21,8 @@ export default function UpdateTaskPage() {
     setTaskId(searchParams.get('taskId') || '');
     setTitle(searchParams.get('title') || '');
     setDescription(searchParams.get('description') || '');
-    setComplete(searchParams.get('complete') === 'true'); // Convert query param to boolean
+    setComplete(searchParams.get('completed') === 'true'); // Convert query param to boolean
+    console.log('searchParams..', searchParams)
   }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
