@@ -69,7 +69,7 @@ mongoose
       try {
         const incompleteTasks = await Task.find({
           completed: false,
-          createdAt: { $lt: new Date(Date.now() - 24 * 60 * 60 * 1000) },
+          // createdAt: { $lt: new Date(Date.now() - 24 * 60 * 60 * 1000) },
         });
     
         console.log("Incomplete tasks fetched:", incompleteTasks);

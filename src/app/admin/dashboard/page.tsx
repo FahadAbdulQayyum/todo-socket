@@ -67,9 +67,10 @@ export default function AdminDashboard() {
       console.log('Incomplete tasks received:', incompleteTasks);
 
       // Display toast notifications for each incomplete task
-      incompleteTasks.forEach((task: any) => {
+      // incompleteTasks.forEach((task: any) => {
+      incompleteTasks.map((task: any) => {
         toast({
-          title: `Reminder: Task ID ${task.taskId}`,
+          title: `Reminder for incomplete task: Task ID ${task.taskId}`,
           description: `${task.title} - ${task.description}`,
           duration: 5000,
           variant: 'destructive', // Optional: Use a warning or error style
