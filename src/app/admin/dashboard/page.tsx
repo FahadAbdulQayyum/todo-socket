@@ -64,11 +64,6 @@ export default function AdminDashboard() {
     // Listen for incomplete tasks from the cron job
     socket.on('incompleteTasks', (payload) => {
       console.log('Raw payload received:', payload);
-      // console.log('Incomplete tasks received:', payload.data);
-
-      // const incompleteTasks = payload.data;
-      // const incompleteTasks = Array.isArray(payload?.data) ? payload.data : [];
-
       // Display toast notification summarizing incomplete tasks
       toast({
         title: `Reminder for ${payload?.length} incomplete tasks.`,
