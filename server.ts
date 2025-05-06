@@ -39,8 +39,8 @@ async function start() {
         });
 
         // Cron job to fetch incomplete tasks and notify clients
-        // cron.schedule('0 8 * * *', async () => {
-        cron.schedule('* * * * *', async () => {
+        cron.schedule('0 8 * * *', async () => {
+        // cron.schedule('* * * * *', async () => {
             try {
                 const incompleteTasks = await collection.find({
                     completed: false,
