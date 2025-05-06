@@ -117,7 +117,7 @@ export default function TasksPage() {
     <div className="p-8">
       <h1 className="text-2xl font-bold mb-4">Your Tasks</h1>
       <ul>
-        {tasks.map((task) => (
+        {tasks?.map((task) => (
           <li key={task.taskId} className="flex justify-between border-b py-2 pe-2">
             <span>
               <h3 className="font-semibold">{task.title}</h3>
