@@ -15,7 +15,7 @@ export default function CreateTaskPage() {
     const response = await fetch('/api/task', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${token}` },
-      body: JSON.stringify({userId: "a66b0aeb-926f-425a-b861-0064dda3cf0d", title, description }),
+      body: JSON.stringify({title, description }),
     });
 
     if (response.ok) {

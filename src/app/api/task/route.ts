@@ -2,18 +2,30 @@ import { NextResponse } from 'next/server';
 import { Task } from '../../../../models/Task';
 import { v4 as uuidv4 } from 'uuid';
 import { connectToDatabase } from '@/app/dashboard/db';
+import jwt from 'jsonwebtoken';
 
 // POST: Create a new task
 export async function POST(req: Request) {
   try {
-    const { userId, title, description } = await req.json();
-    console.log('POST /api/tasks - userId:', userId, 'title:', title, 'description:', description);
+    const { title, description } = await req.json();
+
+    const token = req.headers.get('Authorization')?.split(' ')[1];
+    if (!token) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+    let decoded;
+    try {
+    decoded = jwt.verify(token, process.env.JWT_SECRET!) as { userId: string; role: string };
+    } catch (err) {
+      return NextResponse.json({ error: 'Invalid token' }, { status: 401 });
+    }
+    console.log('POST /api/tasks - userId:', decoded.userId, 'title:', title, 'description:', description);
 
     await connectToDatabase();
 
     const newTask = new Task({
       taskId: uuidv4(),
-      userId,
+      userId: decoded.userId,
       title,
       description,
     });

@@ -29,7 +29,8 @@ export default function TasksPage() {
       dispatch(setLoading(true));
       const token = document.cookie.replace(/(?:(?:^|.*;\s*)token\s*=\s*([^;]*).*$)|^.*$/, '$1');
       console.log('!...token...!', token);
-      const response = await fetch('/api/tasks?userId=a66b0aeb-926f-425a-b861-0064dda3cf0d', {
+      // const response = await fetch('/api/tasks?userId=a66b0aeb-926f-425a-b861-0064dda3cf0d', {
+      const response = await fetch('/api/tasks', {
         method: 'GET',
         headers: { Authorization: `Bearer ${token}` },
       });
