@@ -63,14 +63,16 @@ export default function AdminDashboard() {
 
     // Listen for incomplete tasks from the cron job
     socket.on('incompleteTasks', (payload) => {
-      console.log('Incomplete tasks received:', payload.data);
+      console.log('Raw payload received:', payload);
+      // console.log('Incomplete tasks received:', payload.data);
 
-      const incompleteTasks = payload.data;
+      // const incompleteTasks = payload.data;
+      // const incompleteTasks = Array.isArray(payload?.data) ? payload.data : [];
 
       // Display toast notification summarizing incomplete tasks
       toast({
-        title: `Reminder for ${incompleteTasks.length} incomplete tasks.`,
-        description: `Your system has ${incompleteTasks.length} incomplete tasks.`,
+        title: `Reminder for ${payload?.length} incomplete tasks.`,
+        description: `Your system has ${payload?.length} incomplete tasks.`,
         duration: 5000,
         variant: 'destructive', // Optional: Use a warning or error style
       });
