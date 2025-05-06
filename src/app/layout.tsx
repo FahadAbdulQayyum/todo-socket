@@ -8,6 +8,7 @@ import Providers from "@/components/Providers";
 
 import { Toaster } from "@/components/ui/toaster"
 import AppLoader from "@/components/AppLoader";
+import { Suspense } from "react";
 
 const myfont = Inter({
   subsets: ["latin"],
@@ -33,7 +34,9 @@ export default function RootLayout({
               <Navbar />
             </span>
             <div className="mt-24">
-              {children}
+              <Suspense fallback={<div>Loading...</div>}>
+                {children}
+              </Suspense>
             </div>
             <AppLoader />
             <Toaster />

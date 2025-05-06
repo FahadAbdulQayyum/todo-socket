@@ -4,6 +4,8 @@ import { Task } from '../../../../../models/Task';
 import jwt from 'jsonwebtoken';
 import { connectToDatabase } from '@/app/dashboard/db';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: Request) {
   try {
     // Extract the JWT token from the request headers or cookies

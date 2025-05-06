@@ -1,6 +1,7 @@
 import { WebSocket, Server } from 'ws';
 import { MongoClient } from 'mongodb';
 import dotenv from 'dotenv';
+import cron from 'node-cron';
 
 dotenv.config();
 
@@ -27,14 +28,41 @@ async function start() {
         const changeStream = collection.watch();
 
         changeStream.on('change', (change) => {
-            console.log('Change detected0:', change);
+            console.log('Change detected:', change);
 
             // Broadcast the change to all connected WebSocket clients
-            wss.clients.forEach((client: WebSocket) => {
+            wss.clients.forEach((client) => {
                 if (client.readyState === WebSocket.OPEN) {
                     client.send(JSON.stringify(change));
                 }
             });
+        });
+
+        // Cron job to fetch incomplete tasks and notify clients
+        cron.schedule('0 8 * * *', async () => {
+        // cron.schedule('* * * * *', async () => {
+            try {
+                const incompleteTasks = await collection.find({
+                    completed: false,
+                    createdAt: { $lt: new Date(Date.now() - 24 * 60 * 60 * 1000) },
+                }).toArray();
+
+                console.log('Incomplete tasks fetched:', incompleteTasks);
+
+                // Notify all connected WebSocket clients about incomplete tasks
+                wss.clients.forEach((client) => {
+                    if (client.readyState === WebSocket.OPEN) {
+                        client.send(
+                            JSON.stringify({
+                                type: 'incompleteTasks',
+                                data: incompleteTasks,
+                            })
+                        );
+                    }
+                });
+            } catch (error) {
+                console.error('Error fetching incomplete tasks:', error);
+            }
         });
     } catch (error) {
         console.error('Error connecting to MongoDB:', error);
@@ -44,10 +72,14 @@ async function start() {
 start();
 
 // Handle WebSocket connections
-wss.on('connection', (ws: WebSocket) => {
+wss.on('connection', (ws) => {
     console.log('Client connected');
 
     ws.on('close', () => {
         console.log('Client disconnected');
+    });
+
+    ws.on('error', (error) => {
+        console.error('WebSocket error:', error);
     });
 });

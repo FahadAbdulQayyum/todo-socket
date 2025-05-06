@@ -4,6 +4,8 @@ import { Task } from '../../../../models/Task';
 import { connectToDatabase } from '@/app/dashboard/db';
 import jwt from 'jsonwebtoken';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(req: Request) {
   try {
     

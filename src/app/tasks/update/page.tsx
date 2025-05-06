@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, Suspense } from 'react';
+import { useState, useEffect } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 export default function UpdateTaskPage() {
@@ -44,7 +44,6 @@ export default function UpdateTaskPage() {
   };
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
       <div className="p-8">
         <h1 className="text-2xl font-bold mb-4">Update Task</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
@@ -72,7 +71,6 @@ export default function UpdateTaskPage() {
           </button>
         </form>
       </div>
-    </Suspense>
   );
 }
 

@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { connectToDatabase } from '@/app/dashboard/db';
 import jwt from 'jsonwebtoken';
 
+export const dynamic = 'force-dynamic';
+
 // POST: Create a new task
 export async function POST(req: Request) {
   try {
