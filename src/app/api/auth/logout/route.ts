@@ -2,7 +2,6 @@ import { serialize } from 'cookie';
 
 export async function POST() {
   // Clear the authToken cookie
-  // const serializedCookie = serialize('httpToken', '', {
   const serializedCookie = serialize('token', '', {
     httpOnly: true,
     secure: process.env.NODE_ENV === 'production',

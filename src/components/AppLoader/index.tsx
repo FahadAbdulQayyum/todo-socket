@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { RootState } from '../lib/store';
 
 const AppLoader = () => {
-    // const isLoading = useSelector((state) => state.loader?.isLoading);
     const isLoading = useSelector((state: RootState) => state.loading.loading);
 
 

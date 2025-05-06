@@ -5,7 +5,6 @@ import { makeStore, AppStore } from '../lib/store'
 
 import AppLoader from '../AppLoader'
 
-//
 export default function StoreProvider({
     children
 }: {

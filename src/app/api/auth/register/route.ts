@@ -1,4 +1,3 @@
-// app/api/auth/register/route.ts
 import { NextResponse } from 'next/server';
 import { User } from '../../../../../models/User';
 import { v4 as uuidv4 } from 'uuid';
@@ -7,8 +6,6 @@ import { connectToDatabase } from '@/app/dashboard/db';
 export async function POST(req: Request) {
   try {
     const { email, password, role } = await req.json();
-
-    console.log('...e...', email, password, role)
 
     // Connect to MongoDB
     await connectToDatabase();

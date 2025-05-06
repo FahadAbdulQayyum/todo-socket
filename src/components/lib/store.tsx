@@ -8,12 +8,6 @@ import { loadState, saveState } from './features/localStorage';
 // Load persisted state from localStorage
 const preloadedState = loadState()
     || {
-    // cart: { /* default cart state */ },
-    // counter: { /* default counter state */ },
-    // location: { /* default location state */ },
-    // product: { products: [] },
-    // service: { /* default service state */ },
-    // dynamicApiCall: { /* default API call state */ },
     userInfo: {
         userInfo: null,
         userInfos: [],
