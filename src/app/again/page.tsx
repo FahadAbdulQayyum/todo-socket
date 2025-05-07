@@ -9,7 +9,7 @@ import Last from './last'
 const Page = () => {
   return (
     <div className='font-clash-display px-32 space-y-10 -mt-20'>
-        <StarsBackground imgSrc={'/star.svg'} />
+        <StarsBackground imgSrc={'/images/star.svg'} />
         <Navbar />
         <Hero />
         <Features />
