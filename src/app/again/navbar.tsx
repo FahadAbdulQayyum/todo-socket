@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 import React, { useState } from 'react';
+import CustomButton from './utils/CustomButton';
 
 const Navbar = () => {
   // State to track the active navigation item
@@ -37,7 +38,9 @@ const Navbar = () => {
         </ul>
       </span>
       <span>
-        <button className="flex items-center space-x-2 bg-black text-white p-4 px-10 !font-light rounded-md">Download</button>
+        <CustomButton>
+          Download
+        </CustomButton>
       </span>
     </div>
   );

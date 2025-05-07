@@ -6,6 +6,7 @@ import RibbonAnimation from "./ribbonAnimation";
 import Image from "next/image";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import CustomButton from "./utils/CustomButton";
 
 // Register ScrollTrigger plugin
 gsap.registerPlugin(ScrollTrigger);
@@ -123,10 +124,10 @@ const Hero = () => {
           Cum et convallis risus placerat aliquam, nunc. Scelerisque aliquet faucibus tincidunt eu adipiscing sociis arcu lorem porttitor.
         </p>
         <span className="flex items-center space-x-10">
-          <button className="flex items-center space-x-2 bg-black text-white p-4 !font-light rounded-md">
+          <CustomButton>
             <p>Get Started</p>
             <MoveRight size={15} />
-          </button>
+          </CustomButton>
           <span className="flex space-x-4">
             <PlayCircle />
             <p className="">Watch Video</p>
