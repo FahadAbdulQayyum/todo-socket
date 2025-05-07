@@ -126,7 +126,7 @@ const Ready = () => {
       ref={readyRef} // Assign ref to the entire Ready section
       className="relative bg-black text-white rounded-sm grid grid-cols-2 py-40 overflow-hidden"
     >
-        <StarsBackground imgSrc={'/starw.svg'} />
+        <StarsBackground imgSrc={'/images/starw.svg'} />
       {/* Text Section */}
       <div className="flex flex-col justify-center space-y-4 ps-10">
         <h1 className="font-bold text-6xl">Ready To Get Started?</h1>
