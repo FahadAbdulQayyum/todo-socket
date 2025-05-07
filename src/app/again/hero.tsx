@@ -109,7 +109,6 @@ const Hero = () => {
   return (
     <div
     ref={readyRef} // Assign ref to the entire Ready section
-    // className="container m-auto grid grid-cols-2">
     className="container grid grid-cols-2">
       {/* Text Section */}
       <div className="absolute top-28 left-96">
@@ -130,7 +129,6 @@ const Hero = () => {
           </button>
           <span className="flex space-x-4">
             <PlayCircle />
-            {/* <p className="font-bold">Watch Video</p> */}
             <p className="">Watch Video</p>
           </span>
         </span>
@@ -185,7 +183,6 @@ const Hero = () => {
           alt="iphone"
           height={100}
           width={100}
-        //   className="w-full h-full absolute top-2 -right-16 opacity-0 !z-1"
           className="w-full h-full absolute -top-32 left-28 opacity-0 !z-1"
           style={{ transformStyle: "preserve-3d" }}
         />
@@ -198,7 +195,6 @@ const Hero = () => {
           alt="iphone1"
           height={100}
           width={100}
-        //   className="w-full h-full absolute top-4 right-2 opacity-0 !z-1"
           className="w-full h-full absolute -top-40 right-2 opacity-0 !z-1"
           style={{ transformStyle: "preserve-3d" }}
         />
@@ -211,7 +207,6 @@ const Hero = () => {
           alt="iphone2"
           height={100}
           width={100}
-        //   className="w-full h-full absolute top-0 -right-36 opacity-0 !z-1"
           className="w-full h-full absolute -top-60 -left-60 opacity-0 !z-1"
           style={{ transformStyle: "preserve-3d" }}
         />
@@ -226,146 +221,3 @@ const Hero = () => {
 };
 
 export default Hero;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// "use client";
-
-// import { MoveRight, PlayCircle } from "lucide-react";
-// import React, { useEffect, useRef } from "react";
-// import RibbonAnimation from "../frontend/ribbonAnimation";
-// import Image from "next/image";
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
-
-// // Register ScrollTrigger plugin
-// gsap.registerPlugin(ScrollTrigger);
-
-// const Hero = () => {
-//   const iphone1Ref = useRef<HTMLImageElement>(null);
-//   const iphone2Ref = useRef<HTMLImageElement>(null);
-//   const iphone3Ref = useRef<HTMLImageElement>(null);
-
-//   useEffect(() => {
-//     // Animate the first iPhone
-//     gsap.to(iphone1Ref.current, {
-//       x: -100, // Move left as you scroll down
-//       opacity: 1,
-//       duration: 1,
-//       scrollTrigger: {
-//         trigger: "#iphone1",
-//         start: "top center",
-//         end: "bottom center",
-//         scrub: true, // Smoothly follow the scroll
-//       },
-//     });
-
-//     // Animate the second iPhone
-//     gsap.to(iphone2Ref.current, {
-//       x: 0, // Stay centered
-//       opacity: 1,
-//       duration: 1.5,
-//       scrollTrigger: {
-//         trigger: "#iphone2",
-//         start: "top center",
-//         end: "bottom center",
-//         scrub: true,
-//       },
-//     });
-
-//     // Animate the third iPhone
-//     gsap.to(iphone3Ref.current, {
-//       x: 100, // Move right as you scroll down
-//       opacity: 1,
-//       duration: 2,
-//       scrollTrigger: {
-//         trigger: "#iphone3",
-//         start: "top center",
-//         end: "bottom center",
-//         scrub: true,
-//       },
-//     });
-//   }, []);
-
-//   return (
-//     <div className="container m-auto grid grid-cols-2">
-//       {/* Text Section */}
-//       <div className="space-y-6">
-//         <h1 className="font-bold text-7xl">Make The Best Financial Decisions</h1>
-//         <p>
-//           Cum et convallis risus placerat aliquam, nunc. Scelerisque aliquet faucibus tincidunt eu adipiscing sociis arcu lorem porttitor.
-//         </p>
-//         <span className="flex items-center space-x-10">
-//           <button className="flex items-center space-x-2 bg-black text-white px-4 py-2">
-//             <p>Get Started</p>
-//             <MoveRight size={15} />
-//           </button>
-//           <PlayCircle />
-//           <p className="font-bold">Watch Video</p>
-//         </span>
-//       </div>
-
-//       {/* Images Section */}
-//       <div className="relative h-[80vh] mt-20 row-span-2">
-//         {/* First Image */}
-//         <Image
-//           ref={iphone1Ref}
-//           id="iphone1"
-//           src="/iphone.svg"
-//           alt="iphone"
-//           height={100}
-//           width={100}
-//           className="w-full h-full absolute top-2 -right-16 opacity-0 !z-1"
-//           style={{ transformStyle: "preserve-3d" }}
-//         />
-
-//         {/* Second Image */}
-//         <Image
-//           ref={iphone2Ref}
-//           id="iphone2"
-//           src="/iphone1.svg"
-//           alt="iphone1"
-//           height={100}
-//           width={100}
-//           className="w-full h-full absolute top-4 right-2 opacity-0 !z-1"
-//           style={{ transformStyle: "preserve-3d" }}
-//         />
-
-//         {/* Third Image */}
-//         <Image
-//           ref={iphone3Ref}
-//           id="iphone3"
-//           src="/iphone2.svg"
-//           alt="iphone2"
-//           height={100}
-//           width={100}
-//           className="w-full h-full absolute top-0 right-36 opacity-0 !z-1"
-//           style={{ transformStyle: "preserve-3d" }}
-//         />
-//       </div>
-
-//       {/* Ribbon Animation */}
-//       <div className="">
-//         <RibbonAnimation />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Hero;

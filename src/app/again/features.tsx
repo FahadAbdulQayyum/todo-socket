@@ -105,7 +105,6 @@ const Features = () => {
   return (
     <div className="grid grid-cols-2">
       {/* Left Section */}
-      {/* <div className="bg-orange-400"> */}
       <div className="relative">
         <div className="absolute top-28 left-10 right-0">
             <div className="dimCircle blur-3xl -space-y-20">

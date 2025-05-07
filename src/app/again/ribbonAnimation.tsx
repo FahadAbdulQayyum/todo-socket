@@ -39,32 +39,6 @@ const RibbonAnimation = () => {
         </div>
     </span>
 </div>
-    // <div>
-    //     <span className='flex justify-center space-x-4 bg-black px-2 py-4 rounded-r-lg -rotate-[30deg] !z-20'>
-    //         <div className='flex items-center space-x-4'>
-    //             <span className='border border-fiftiary p-2 rounded-full'><AnvilIcon className="text-fiftiary" size={20}/></span>
-    //             <span className='text-white'>
-    //                 <h2>Achievements</h2>
-    //                 <p>Best Finance App On Playstore</p>
-    //             </span>
-    //         </div>
-    //         <span className='w-0.5 bg-white h-[50px] text-5xl text-white rotate-12'></span>
-    //         <div className='flex items-center space-x-4'>
-    //             <span className='border border-fiftiary p-2 rounded-full'><AnvilIcon className="text-fiftiary" size={20}/></span>
-    //             <span className='text-white'>
-    //                 <h2>Achievements</h2>
-    //                 <p>Best Finance App On Playstore</p>
-    //             </span>
-    //         </div>
-    //     </span>
-    //     <span className='flex justify-center space-x-4 bg-fiftiary px-2 py-7 rounded-r-lg -rotate-[60deg] w-[50%] !z-0'>
-    //         <div className='flex items-center space-x-4'>
-    //             <span className='text-black'>
-    //                 <p>Best Finance App On Playstore</p>
-    //             </span>
-    //         </div>
-    //     </span>
-    // </div>
   )
 }
 

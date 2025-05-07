@@ -14,25 +14,3 @@ const Last = () => {
 };
 
 export default Last;
-
-
-
-
-
-
-
-
-
-
-// import React from 'react'
-
-// const Last = () => {
-//   return (
-//     <div className='flex flex-col justify-center'>
-//         <div className='border w-full'></div>
-//         <p className='self-center mt-10'>Copyright 2024 All Rights Reserved</p>
-//     </div>
-//   )
-// }
-
-// export default Last
