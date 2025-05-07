@@ -181,7 +181,7 @@ const Hero = () => {
         <Image
           ref={iphone1Ref}
           id="iphone1"
-          src="/iphone.svg"
+          src="/images/iphone.svg"
           alt="iphone"
           height={100}
           width={100}
@@ -194,7 +194,7 @@ const Hero = () => {
         <Image
           ref={iphone2Ref}
           id="iphone2"
-          src="/iphone1.svg"
+          src="/images/iphone1.svg"
           alt="iphone1"
           height={100}
           width={100}
@@ -207,7 +207,7 @@ const Hero = () => {
         <Image
           ref={iphone3Ref}
           id="iphone3"
-          src="/iphone2.svg"
+          src="/images/iphone2.svg"
           alt="iphone2"
           height={100}
           width={100}

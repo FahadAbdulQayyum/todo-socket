@@ -149,7 +149,7 @@ const Features = () => {
           <Image
             ref={iphoneRef}
             id="iphone3"
-            src="/iphone3.svg"
+            src="/images/iphone3.svg"
             alt="iphone2"
             height={100}
             width={100}

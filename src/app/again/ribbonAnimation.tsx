@@ -32,8 +32,8 @@ const RibbonAnimation = () => {
     <span className='absolute -bottom-[119px] right-[88px] flex justify-center space-x-4 bg-fiftiary px-2 rounded-r-lg w-[40%] -z-10'>
         <div className='flex items-center space-x-4'>
             <span className='flex justify-between items-center space-x-4 text-black'>
-                <p><Image src={"/star.svg"} alt="star" height={50} width={50} /></p>
-                <p className='border border-l-black border-r-black px-2 py-4'><Image src={"/star.svg"} alt="star" height={50} width={50} /></p>
+                <p><Image src={"/images/star.svg"} alt="star" height={50} width={50} /></p>
+                <p className='border border-l-black border-r-black px-2 py-4'><Image src={"/images/star.svg"} alt="star" height={50} width={50} /></p>
                 <p>Uifry Premium</p>
             </span>
         </div>

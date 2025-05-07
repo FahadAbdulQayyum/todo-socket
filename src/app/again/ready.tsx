@@ -211,7 +211,7 @@ const Ready = () => {
             <Image
               ref={iphone1Ref}
               id="iphone1"
-              src="/1.svg"
+              src="/images/1.svg"
               alt="iphone"
               height={50}
               width={50}
@@ -223,7 +223,7 @@ const Ready = () => {
             <Image
               ref={iphone2Ref}
               id="iphone2"
-              src="/2.svg"
+              src="/images/2.svg"
               alt="iphone1"
               height={50}
               width={50}
@@ -234,7 +234,7 @@ const Ready = () => {
             <Image
               ref={iphone3Ref}
               id="iphone3"
-              src="/3.svg"
+              src="/images/3.svg"
               alt="iphone2"
               height={50}
               width={50}

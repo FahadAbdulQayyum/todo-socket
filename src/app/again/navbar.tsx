@@ -16,7 +16,7 @@ const Navbar = () => {
     <div className="flex justify-between items-center pb-20">
       <span className="flex justify-center items-center space-x-16">
         <Image
-          src="/logo.svg"
+          src="/images/logo.svg"
           alt="logo"
           width={100}
           height={100}
