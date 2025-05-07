@@ -1,0 +1,60 @@
+/* Ribbon Container */
+.ribbonContainer {
+    position: relative;
+    width: 300px; /* Adjust as needed */
+    height: 200px; /* Adjust as needed */
+    margin: 50px auto;
+    overflow: hidden;
+  }
+  
+  /* Ribbon Lines */
+  .line {
+    position: absolute;
+    width: 100%;
+    height: 5px; /* Thickness of the ribbon lines */
+    background-color: #ff6f61; /* Ribbon color */
+    transform-origin: center;
+    animation: openRibbon 1.5s ease-out forwards; /* Animation duration */
+  }
+  
+  .line1 {
+    top: 40%;
+    transform: rotate(-45deg) scaleX(0);
+  }
+  
+  .line2 {
+    top: 50%;
+    transform: rotate(0deg) scaleX(0);
+  }
+  
+  .line3 {
+    top: 60%;
+    transform: rotate(45deg) scaleX(0);
+  }
+  
+  /* Text */
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+  
+  .text.fadeIn {
+    opacity: 1;
+  }
+  
+  /* Keyframes for Ribbon Animation */
+  @keyframes openRibbon {
+    0% {
+      transform: scaleX(0);
+    }
+    100% {
+      transform: scaleX(1);
+    }
+  }

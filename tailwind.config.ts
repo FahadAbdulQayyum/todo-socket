@@ -15,6 +15,7 @@ const config: Config = {
   			secondaryy: '#000000',
   			tertiary: '#DB4444',
   			quartiary: '#9E3500',
+  			fiftiary: '#FF5555',
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
