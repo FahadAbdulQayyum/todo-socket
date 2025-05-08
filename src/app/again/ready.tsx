@@ -209,7 +209,7 @@ const Ready = () => {
               alt="iphone"
               height={50}
               width={50}
-              className="w-full h-[170%] absolute -top-0 -right-72 opacity-0 !z-20"
+              className="w-full h-[170%] absolute -top-0 -right-72 !z-20"
             />
 
             {/* Second Image */}
@@ -220,7 +220,7 @@ const Ready = () => {
               alt="iphone1"
               height={50}
               width={50}
-              className="w-full h-[200%] absolute -top-20 -right-80 opacity-0 !z-10"
+              className="w-full h-[200%] absolute -top-20 -right-80 !z-10"
             />
 
             {/* Third Image */}
@@ -231,7 +231,7 @@ const Ready = () => {
               alt="iphone2"
               height={50}
               width={50}
-              className="w-full h-[200%] absolute -top-24 -right-64 opacity-0 !z-1"
+              className="w-full h-[200%] absolute -top-24 -right-64 !z-1"
             />
           </div>
         </div>
