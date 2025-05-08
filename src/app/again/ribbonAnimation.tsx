@@ -1,6 +1,7 @@
 import { AnvilIcon, CupSodaIcon } from 'lucide-react'
 import Image from 'next/image'
 import React from 'react'
+import './styles/ribbon0.css'
 
 const RibbonAnimation = () => {
   return (
@@ -22,14 +23,16 @@ const RibbonAnimation = () => {
             </span>
         </div>
     </span>
-    <span className='absolute -top-[92px] right-[68px] flex justify-center space-x-4 bg-fiftiary px-2 py-7 rounded-r-lg w-[50%] -rotate-[50deg] z-10'>
+
+    {/* <span className='absolute -top-[92px] right-[68px] flex justify-center space-x-4 bg-fiftiary px-2 py-7 rounded-r-lg w-[50%] -rotate-[50deg] z-10'>
         <div className='flex items-center space-x-4'>
             <span className='text-black'>
                 <p>Best Finance App On Playstore</p>
             </span>
         </div>
-    </span>
-    <span className='absolute -bottom-[119px] right-[88px] flex justify-center space-x-4 bg-fiftiary px-2 rounded-r-lg w-[40%] -z-10'>
+    </span> */}
+    
+    {/* <span className='absolute -bottom-[119px] right-[88px] flex justify-center space-x-4 bg-fiftiary px-2 rounded-r-lg w-[40%] -z-10'>
         <div className='flex items-center space-x-4'>
             <span className='flex justify-between items-center space-x-4 text-black'>
                 <p><Image src={"/images/star.svg"} alt="star" height={50} width={50} /></p>
@@ -37,8 +40,21 @@ const RibbonAnimation = () => {
                 <p>Uifry Premium</p>
             </span>
         </div>
-    </span>
-</div>
+    </span> */}
+
+    {/* <div className="ribbon">Your text content</div> */}
+    {/* <div className="ribbon -rotate-[320deg] -scale-100">Your text content</div> */}
+    <div className="ribbon flex items-center space-x-3">
+        <span></span>
+        <span className='border px-4 border-l-black border-r-black py-4'><Image src={"/images/star.svg"} alt="star" height={40} width={40}/></span>
+        <span className='leading-3 space-y-2'>
+            <h2>Uifry Premium</h2>
+            <p className='font-light'>Free Trial</p>
+        </span>
+    </div>
+    {/* <div className="ribbon rotate-[40deg] ">Your text content</div> */}
+
+    </div>
   )
 }
 

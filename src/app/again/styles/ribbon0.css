@@ -1,0 +1,40 @@
+.ribbon {
+  /* font-size: 28px; */
+  font-size: 13px;
+  font-weight: bold;
+  /* color: #fff; */
+  color: black;
+}
+.ribbon {
+  --s: 20em;   /* the ribbon size */
+  --a: 40deg; /* the angle of the folded part */
+  --r: .8em;  /* the cutout part */
+  --c: #FF6B6B;
+  --ct: #f75e5e;
+  /* --ct: orange; */
+  
+  line-height: 5;
+  padding-inline: calc(3lh*tan(var(--a)/2) + .3em) calc(var(--r) + .3em);
+  margin-top: calc(var(--s)*sin(var(--a)));
+  clip-path: polygon(0 0,0 -999px,calc(100% - var(--r)) -999px,calc(108% - var(--r)) 0,100% 50%,calc(108% - var(--r)) 100%,calc(1lh*tan(var(--a)/2)) 100%);
+  background-color: var(--c); 
+  /* width: fit-content; */
+  width: 300px;
+  position: relative;
+  border-radius: 0 10px 10px 0;
+}
+.ribbon:before {
+  content:"\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0 Make The Best Financial Developer";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 1lh;
+  width: var(--s);
+  /* background: color-mix(in srgb,var(--c),#000 40%); */
+  background: var(--ct);
+  transform-origin: top left;
+  rotate: calc(-1*var(--a));
+  clip-path: polygon(0 0,200% 0,calc(200% - var(--r)) 50%,100% 100%,calc(1lh/tan(var(--a))) 100%);
+  /* clip-path: polygon(0 0,100% 0,calc(200% - var(--r)) 50%,100% 100%,calc(-2lh/tan(var(--a))) 100%); */
+  /* clip-path: polygon(0 0,0 -999px,calc(100% - var(--r)) -999px,calc(108% - var(--r)) 0,100% 50%,calc(108% - var(--r)) 100%,calc(1lh*tan(var(--a)/2)) 100%); */
+}

@@ -1,0 +1,18 @@
+/* HTML: <div class="ribbon">Your text content</div> */
+.ribbon {
+    font-size: 28px;
+    font-weight: bold;
+    color: #fff;
+  }
+  .ribbon {
+    --r:  .6em; /* control the cutout of the ribbon */
+    --s: 1.5em; /* size of the folded part */
+    
+    line-height: 1.8;
+    padding-inline: calc(var(--r) + .3em) 1lh;
+    border-bottom: var(--s) solid #0005;
+    background: #FF6B6B;
+    clip-path: polygon(calc(100% - 1lh) 0,0 0,var(--r) calc(50% - var(--s)/2),0 calc(100% - var(--s)),calc(100% - 1lh) calc(100% - var(--s)),calc(100% - 1lh) calc(100% - var(--r)),calc(100% - .5lh) 100%,100% calc(100% - var(--r)),100% calc(100% - var(--s)));
+    width: fit-content;
+  }
+  
