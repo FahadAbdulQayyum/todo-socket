@@ -6,20 +6,21 @@
   color: black;
 }
 .ribbon {
-  --s: 20em;   /* the ribbon size */
-  --a: 40deg; /* the angle of the folded part */
+  --s: 25em;   /* the ribbon size */
+  /* --a: 40deg; */
+  --a: 50deg; /* the angle of the folded part */
   --r: .8em;  /* the cutout part */
   --c: #FF6B6B;
   --ct: #f75e5e;
   /* --ct: orange; */
   
-  line-height: 5;
+  line-height: 6;
   padding-inline: calc(3lh*tan(var(--a)/2) + .3em) calc(var(--r) + .3em);
   margin-top: calc(var(--s)*sin(var(--a)));
   clip-path: polygon(0 0,0 -999px,calc(100% - var(--r)) -999px,calc(108% - var(--r)) 0,100% 50%,calc(108% - var(--r)) 100%,calc(1lh*tan(var(--a)/2)) 100%);
   background-color: var(--c); 
   /* width: fit-content; */
-  width: 300px;
+  width: 400px;
   position: relative;
   border-radius: 0 10px 10px 0;
 }

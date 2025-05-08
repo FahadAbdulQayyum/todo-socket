@@ -6,7 +6,8 @@ import './styles/ribbon0.css'
 const RibbonAnimation = () => {
   return (
     <div className="relative">
-    <span className='absolute -top-20 left-0 flex justify-center space-x-4 bg-black p-4 rounded-r-lg -rotate-[30deg] z-20'>
+    {/* <span className='absolute -top-20 left-0 flex justify-center space-x-4 bg-black p-4 rounded-r-lg -rotate-[30deg] z-20'> */}
+    <span className='absolute -top-40 left-0 flex justify-center space-x-4 bg-black p-4 rounded-r-lg -rotate-[30deg] z-20'>
         <div className='flex items-center space-x-4'>
             <span className='border border-fiftiary p-2 rounded-full'><AnvilIcon className="text-fiftiary" size={20}/></span>
             <span className='text-white'>
@@ -44,11 +45,10 @@ const RibbonAnimation = () => {
 
     {/* <div className="ribbon">Your text content</div> */}
     {/* <div className="ribbon -rotate-[320deg] -scale-100">Your text content</div> */}
-    <div className="ribbon flex items-center space-x-3">
-        <span></span>
-        <span className='border px-4 border-l-black border-r-black py-4'><Image src={"/images/star.svg"} alt="star" height={40} width={40}/></span>
+    <div className="ribbon flex justify-center items-center space-x-3 !-top-[60px] !left-[212px]">
+        <span className='border-2 px-4 border-l-black border-r-black py-4'><Image src={"/images/star.svg"} alt="star" height={50} width={50} className='text-4xl'/></span>
         <span className='leading-3 space-y-2'>
-            <h2>Uifry Premium</h2>
+            <h2 className='w-full'>Uifry Premium</h2>
             <p className='font-light'>Free Trial</p>
         </span>
     </div>
