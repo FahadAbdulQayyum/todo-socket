@@ -16,6 +16,8 @@ const Features = () => {
   const circle3Ref = useRef<HTMLDivElement>(null);
   const iphoneRef = useRef<HTMLImageElement>(null);
   useEffect(() => {
+    
+    // Ensure the Ready section is rendered before setting up animations
     if (!readyRef.current) return;
     
     // Animate the third iPhone (move right)

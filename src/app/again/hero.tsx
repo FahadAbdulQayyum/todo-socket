@@ -146,9 +146,13 @@ const Hero = () => {
         {/* Circle 1 */}
         <div
           ref={circle1Ref}
-          className="absolute -top-24 left-10 right-0 h-[50%] w-[80%] !z-0"
+          // className="absolute -top-24 left-10 right-0 h-[50%] w-[80%] !z-0"
+          // className="absolute -top-56 left-60 right-0 h-[80%] w-[50%] !z-0 !-rotate-[20deg]"
+          // className="absolute -top-44 right-60 h-[80%] w-[50%] !z-0 !-rotate-[40deg]"
+          className="absolute -top-40 right-36 h-[70%] w-[50%] !z-0 !-rotate-[40deg]"
           style={{
-            borderRadius: "36% 64% 35% 65% / 34% 68% 32% 66%",
+            // borderRadius: "36% 64% 35% 65% / 34% 68% 32% 66%",
+            borderRadius: "50%",
             border: "1px solid gray",
             transformStyle: "preserve-3d",
           }}
@@ -157,9 +161,13 @@ const Hero = () => {
         {/* Circle 2 */}
         <div
           ref={circle2Ref}
-          className="absolute -top-48 left-10 right-0 h-[50%] w-[80%] !z-0"
+          // className="absolute -top-48 left-10 right-0 h-[50%] w-[80%] !z-0"
+          // className="absolute -top-56 left-60 right-0 h-[80%] w-[50%] !z-0 !-rotate-[20deg]"
+          // className="absolute -top-48 right-40 h-[80%] w-[50%] !z-0 !-rotate-[40deg]"
+          className="absolute -top-32 right-44 h-[70%] w-[50%] !z-0 !-rotate-[40deg]"
           style={{
-            borderRadius: "36% 64% 35% 65% / 34% 68% 32% 66%",
+            // borderRadius: "36% 64% 35% 65% / 34% 68% 32% 66%",
+            borderRadius: "50%",
             border: "1px solid gray",
             transformStyle: "preserve-3d",
           }}
@@ -168,9 +176,13 @@ const Hero = () => {
         {/* Circle 3 */}
         <div
           ref={circle3Ref}
-          className="absolute -top-64 left-10 right-0 h-[50%] w-[80%] !z-0"
+          // className="absolute -top-64 left-10 right-0 h-[50%] w-[80%] !z-0"
+          // className="absolute -top-56 left-60 right-0 h-[80%] w-[50%] !z-0 !-rotate-[20deg]"
+          // className="absolute -top-40 right-36 h-[70%] w-[50%] !z-0 !-rotate-[40deg]"
+          className="absolute -top-24 right-52 h-[70%] w-[50%] !z-0 !-rotate-[40deg]"
           style={{
-            borderRadius: "36% 64% 35% 65% / 34% 68% 32% 66%",
+            // borderRadius: "36% 64% 35% 65% / 34% 68% 32% 66%",
+            borderRadius: "50%",
             border: "1px solid gray",
             transformStyle: "preserve-3d",
           }}
@@ -184,7 +196,8 @@ const Hero = () => {
           alt="iphone"
           height={100}
           width={100}
-          className="w-full h-full absolute -top-32 left-28 opacity-0 !z-1"
+          // className="w-full h-full absolute -top-32 left-28 opacity-0 !z-1"
+          className="w-full h-full absolute -top-32 left-36 !z-1"
           style={{ transformStyle: "preserve-3d" }}
         />
 
@@ -196,7 +209,7 @@ const Hero = () => {
           alt="iphone1"
           height={100}
           width={100}
-          className="w-full h-full absolute -top-40 right-2 opacity-0 !z-1"
+          className="w-full h-full absolute -top-40 right-2 !z-1"
           style={{ transformStyle: "preserve-3d" }}
         />
 
@@ -208,7 +221,7 @@ const Hero = () => {
           alt="iphone2"
           height={100}
           width={100}
-          className="w-full h-full absolute -top-60 -left-60 opacity-0 !z-1"
+          className="w-full h-full absolute -top-60 -left-60 !z-1"
           style={{ transformStyle: "preserve-3d" }}
         />
       </div>
