@@ -1,41 +1,98 @@
 .ribbon {
-  /* font-size: 28px; */
   font-size: 13px;
   font-weight: bold;
-  /* color: #fff; */
   color: black;
-}
-.ribbon {
   --s: 25em;   /* the ribbon size */
-  /* --a: 40deg; */
-  --a: 50deg; /* the angle of the folded part */
+  --a: 0deg;   /* initial angle, will animate to 50deg */
   --r: .8em;  /* the cutout part */
   --c: #FF6B6B;
   --ct: #f75e5e;
-  /* --ct: orange; */
   
   line-height: 6;
   padding-inline: calc(3lh*tan(var(--a)/2) + .3em) calc(var(--r) + .3em);
   margin-top: calc(var(--s)*sin(var(--a)));
   clip-path: polygon(0 0,0 -999px,calc(100% - var(--r)) -999px,calc(108% - var(--r)) 0,100% 50%,calc(108% - var(--r)) 100%,calc(1lh*tan(var(--a)/2)) 100%);
   background-color: var(--c); 
-  /* width: fit-content; */
   width: 400px;
   position: relative;
   border-radius: 0 10px 10px 0;
 }
+
 .ribbon:before {
-  content:"\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0 Make The Best Financial Developer";
+  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0\00a0 Make The Best Financial Developer";
   position: absolute;
   top: 0;
   left: 0;
   height: 1lh;
   width: var(--s);
-  /* background: color-mix(in srgb,var(--c),#000 40%); */
   background: var(--ct);
   transform-origin: top left;
   rotate: calc(-1*var(--a));
   clip-path: polygon(0 0,200% 0,calc(200% - var(--r)) 50%,100% 100%,calc(1lh/tan(var(--a))) 100%);
-  /* clip-path: polygon(0 0,100% 0,calc(200% - var(--r)) 50%,100% 100%,calc(-2lh/tan(var(--a))) 100%); */
-  /* clip-path: polygon(0 0,0 -999px,calc(100% - var(--r)) -999px,calc(108% - var(--r)) 0,100% 50%,calc(108% - var(--r)) 100%,calc(1lh*tan(var(--a)/2)) 100%); */
+}
+
+.ribbon-text {
+  opacity: 0;
+  animation: fadeInText 0.5s ease-in forwards;
+  animation-delay: 3s; /* Starts after both animations (1.5s black rotation + 1.5s red ribbon unfold) */
+}
+
+.rotate-ribbon {
+  animation: rotateRibbon 1.5s ease-in-out forwards;
+}
+
+.unfold-ribbon-delayed {
+  animation: unfoldRibbon 1.5s ease-in-out forwards;
+  animation-delay: 1.5s; /* Starts after black ribbon rotation */
+}
+
+.unfold-ribbon-delayed:before {
+  animation: unfoldRibbonBefore 1.5s ease-in-out forwards;
+  animation-delay: 1.5s; /* Starts after black ribbon rotation */
+}
+
+@keyframes unfoldRibbon {
+  0% {
+    --a: 0deg; /* Start with 0-degree fold */
+    transform: translateX(-50%) rotate(20deg);
+    opacity: 0.5;
+  }
+  100% {
+    --a: 50deg; /* End with 50-degree fold */
+    transform: translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes unfoldRibbonBefore {
+  0% {
+    --a: 0deg; /* Start with 0-degree fold */
+    rotate: 0deg;
+    opacity: 0.5;
+  }
+  100% {
+    --a: 50deg; /* End with 50-degree fold */
+    rotate: -50deg; /* Matches rotate: calc(-1*var(--a)) */
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInText {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes rotateRibbon {
+  0% {
+    transform: rotate(0deg);
+    opacity: 0.5;
+  }
+  100% {
+    transform: rotate(-30deg);
+    opacity: 1;
+  }
 }

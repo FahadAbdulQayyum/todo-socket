@@ -3,7 +3,7 @@
   font-weight: bold;
   color: black;
   --s: 25em;   /* the ribbon size */
-  --a: 50deg; /* the angle of the folded part */
+  --a: 0deg;   /* initial angle, will animate to 50deg */
   --r: .8em;  /* the cutout part */
   --c: #FF6B6B;
   --ct: #f75e5e;
@@ -41,10 +41,12 @@
 
 @keyframes unfoldRibbon {
   0% {
+    --a: 0deg; /* Start with 0-degree fold */
     transform: translateX(-50%) rotate(20deg);
     opacity: 0.5;
   }
   100% {
+    --a: 50deg; /* End with 50-degree fold */
     transform: translateX(0) rotate(0deg);
     opacity: 1;
   }
@@ -52,11 +54,13 @@
 
 @keyframes unfoldRibbonBefore {
   0% {
-    rotate: calc(-1*var(--a) - 20deg);
+    --a: 0deg; /* Start with 0-degree fold */
+    rotate: 0deg;
     opacity: 0.5;
   }
   100% {
-    rotate: calc(-1*var(--a));
+    --a: 50deg; /* End with 50-degree fold */
+    rotate: -50deg; /* Matches rotate: calc(-1*var(--a)) */
     opacity: 1;
   }
 }
