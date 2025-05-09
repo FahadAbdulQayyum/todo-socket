@@ -1,0 +1,76 @@
+/* Hamburger Menu Styles */
+.menu {
+  cursor: pointer;
+  position: relative;
+  z-index: 60;
+}
+
+.menu input[type="checkbox"] {
+  display: none;
+}
+
+.burger {
+  display: block;
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 8px;
+  border-radius: 8px;
+}
+
+.burger path {
+  fill: none;
+  stroke: #1f2a44;
+  stroke-width: 3;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+}
+
+.burger .top {
+  stroke-dasharray: 40 172;
+}
+
+.burger .middle {
+  stroke-dasharray: 40 111;
+}
+
+.burger .bottom {
+  stroke-dasharray: 40 172;
+}
+
+.menu input[type="checkbox"]:checked + .burger .top {
+  stroke-dashoffset: -132px;
+}
+
+.menu input[type="checkbox"]:checked + .burger .middle {
+  stroke-dashoffset: -71px;
+}
+
+.menu input[type="checkbox"]:checked + .burger .bottom {
+  stroke-dashoffset: -132px;
+}
+
+/* Ensure body doesn't scroll when mobile menu is open */
+body:has(input[id="burger"]:checked) {
+  overflow-y: hidden;
+}
+
+/* Navbar text styling */
+.navbar-text li {
+  font-size: 1.1rem;
+  transition: color 0.2s ease;
+}
+
+.navbar-text li:hover {
+  color: #4a90e2;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .navbar-text {
+    display: none;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu {
+    display: none;
+  }
+}

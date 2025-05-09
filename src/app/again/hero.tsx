@@ -110,7 +110,7 @@ const Hero = () => {
   return (
     <div
     ref={readyRef} // Assign ref to the entire Ready section
-    className="container grid grid-cols-2">
+    className="container grid grid-cols-2 pt-20">
       {/* Text Section */}
       <div className="absolute top-28 left-96">
             <div className="dimCircle blur-2xl -space-y-20 -z-10">

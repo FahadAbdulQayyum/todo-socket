@@ -122,12 +122,12 @@ const Ready = () => {
     >
         <StarsBackground imgSrc={'/images/starw.svg'} />
       {/* Text Section */}
-      <div className="flex flex-col justify-center space-y-4 ps-10">
+      <div className="flex flex-col justify-center space-y-4 ps-28">
         <h1 className="font-bold text-6xl">Ready To Get Started?</h1>
         <p>Risus habitant leo egestas mauris diam eget morbi tempus vulputate.</p>
-        <button className="bg-white text-black flex justify-center items-center p-4 space-x-2 rounded-sm w-[25%]">
-          <p>Download App</p>
-          <RiAppleFill size={25} />
+        <button className="bg-white text-black flex justify-center items-center px-4 py-3 space-x-2 rounded-sm w-[27%]">
+          <p className="text-base">Download App</p>
+          <RiAppleFill size={30} />
         </button>
 
         {/* Circle 1 */}
