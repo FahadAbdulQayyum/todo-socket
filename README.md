@@ -1,3 +1,10 @@
+Here's a clean and updated version of your README that includes all the new functionality and routes you described, while removing outdated ecommerce-related information:
+
+---
+
+````markdown
+# Next.js Todo Application
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
@@ -12,7 +19,7 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+````
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
@@ -24,29 +31,37 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 This project includes the following pages:
 
-- **Cart Page** (`/cart`): Displays the list of products the user has added to their cart.
-- **Checkout Page** (`/checkout`): Appears after the user selects a product on the Product Detail Page (`/product/:id`) and proceeds to checkout.
-- **Contact Us Page** (`/contact`): Allows users to send inquiries or feedback to the site administrators.
-- **Products Page** (`/products`): Displays all the available products.
-- **Product Detail Page** (`/product/:id`): Displays detailed information about a specific product. Users are directed to this page when they select a product on the Products Page.
-- **Sign In/Sign Up Page**:
-  - **Sign Up Page** (`/signup`): A form for new users to create an account. Users access this page by clicking "Join Us."
-  - **Sign In Page** (`/signin`): A form for existing users to log in to their account. Users access this page by clicking "Login."
+* **Register Page** (`/register`): Allows new users to register as either a **user** or **admin**.
+* **Login Page** (`/login`): Authenticates users. Redirects to the task interface if the user is a regular user, or to the admin dashboard if the user is an admin.
+* **Create Todo Page** (`/create`): Lets users create a new todo item.
+* **Update Todo Page** (`/update`): Enables updating existing todo items.
+* **Delete Functionality**: Integrated delete option for removing existing todos.
+* **Live Updates via Socket**: Real-time updates using WebSocket. When a todo is updated, a toast notification appears in the admin portal.
+* **Cron Job Alerts**: Every minute, the app checks and notifies how many incomplete todos remain.
+* **Frontend Playground** (`/again`): A separate page for testing or showcasing another frontend implementation.
 
-## You Can Find This Live on Vercel
-- [Nike Ecommerce Hackathon](https://ec0.vercel.app) - Nike Ecommerce Hackathon Link.
+## Live Demo
+
+You can find the deployed app on Vercel:
+
+* [Live App Link](https://todo-socket-ddqr.vercel.app/login)
 
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+* [Next.js Documentation](https://nextjs.org/docs) - Learn about Next.js features and API.
+* [Learn Next.js](https://nextjs.org/learn) - Interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+You can also check out the [Next.js GitHub repository](https://github.com/vercel/next.js/) for updates and contributions.
 
-## Deploy on Vercel
+## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://ec0.vercel.app) from the creators of Next.js.
+The easiest way to deploy your Next.js app is using the [Vercel Platform](https://vercel.com), from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Refer to the [deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+```
+
+Would you like me to help generate badges (build status, license, etc.) or a project structure section for this README?
+```
