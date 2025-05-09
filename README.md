@@ -1,6 +1,3 @@
-Here's a clean and updated version of your README that includes all the new functionality and routes you described, while removing outdated ecommerce-related information:
-
----
 
 ````markdown
 # Next.js Todo Application
@@ -65,3 +62,6 @@ Refer to the [deployment documentation](https://nextjs.org/docs/deployment) for 
 
 Would you like me to help generate badges (build status, license, etc.) or a project structure section for this README?
 ```
+## Use Screen Resolution
+h = 1886
+w = 884
