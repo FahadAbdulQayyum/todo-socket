@@ -1,4 +1,3 @@
-// models/Task.ts
 import { Schema, model, Document, models } from 'mongoose';
 
 export interface ITask extends Document {

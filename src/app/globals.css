@@ -317,8 +317,6 @@
 
 @font-face {
   font-family: 'Clash Display';
-  /* src: url('/fonts/ClashDisplay-Bold.woff2') format('woff2'),
-       url('/fonts/ClashDisplay-Bold.woff') format('woff'); */
   src: url('/fonts/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Bold.woff') format('woff2'),
        url('/fonts/ClashDisplay_Complete/Fonts/WEB/fonts/ClashDisplay-Bold.woff') format('woff');
   font-weight: 700;
@@ -332,22 +330,6 @@
 .font-clash-display {
   font-family: 'Clash Display', sans-serif;
 }
-
-/* styles/globals.css */
-/* @keyframes float {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: translateY(-10px) scale(1.1);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 1;
-  }
-} */
 
 /* styles/globals.css */
 @keyframes float {
@@ -364,12 +346,6 @@
     opacity: 1;
   }
 }
-
-
-
-
-
-
 
 @import url('https://fonts.googleapis.com/css?family=Oswald:400,700');
 

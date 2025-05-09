@@ -8,8 +8,6 @@ export async function POST(req: Request) {
   try {
     const { email, password } = await req.json();
 
-    console.log('...e(login)...', email, password)
-
     // Connect to MongoDB
     await connectToDatabase();
 
